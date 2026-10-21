@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clínica Reabilite | Dr. Jailton – Dentista em Piancó-PB</title>
+<meta name="description" content="Clínica Reabilite – Dr. Jailton, cirurgião-dentista (CRO 5554) em Piancó-PB. Clínica geral, canal, facetas e lentes de contato, ortodontia e cirurgias. Agende pelo WhatsApp.">
+<meta property="og:title" content="Clínica Reabilite | Dr. Jailton">
+<meta property="og:description" content="Transformando sorrisos todos os dias em Piancó-PB.">
+<meta property="og:image" content="doutor-hero.jpg">
+<link rel="icon" href="logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#b0832f; --gold2:#d6a955; --gold-dark:#7a5a1e;
+  --ink:#1c1c1e; --muted:#5d5a55; --line:#ece4d6;
+  --bg:#fbf8f3; --card:#ffffff; --cream:#f6efe3;
+  --grad:linear-gradient(135deg,#c9973f,#8a6420);
+  --shadow:0 10px 30px rgba(90,66,20,.10);
+  --radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+.serif{font-family:"Playfair Display",Georgia,serif}
+.eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.gold{color:var(--gold)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;font-weight:600;font-size:.92rem;transition:transform .2s,box-shadow .2s;cursor:pointer;border:0}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:var(--grad);color:#fff;box-shadow:0 8px 20px rgba(138,100,32,.30)}
+.btn-ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}
+.btn svg{width:18px;height:18px;flex:none}
+.arrow{transition:transform .2s}.btn:hover .arrow{transform:translateX(3px)}
+.ico{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--cream);color:var(--gold);flex:none}
+.ico svg{width:22px;height:22px}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(251,248,243,.88);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s}
+header.scrolled{border-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:78px;gap:20px}
+.logo img{height:58px;width:auto;mix-blend-mode:multiply}
+.menu{display:flex;gap:30px;font-size:.88rem;font-weight:500}
+.menu a{position:relative;padding:6px 0;color:#333}
+.menu a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--gold);transition:width .25s}
+.menu a:hover::after,.menu a.active::after{width:100%}
+.burger{display:none;background:none;border:0;width:42px;height:42px;cursor:pointer}
+.burger span{display:block;height:2px;background:var(--ink);margin:6px 8px;border-radius:2px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:radial-gradient(ellipse at 75% 30%,#f3eadb 0,#fbf8f3 60%)}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;align-items:end;gap:20px;min-height:600px}
+.hero-text{padding:60px 0 50px}
+.hero h1{font-size:clamp(2.6rem,5.4vw,4.4rem);line-height:1.04;font-weight:600;margin:16px 0 22px}
+.hero h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{font-size:1.1rem;color:var(--muted);max-width:460px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin:32px 0 38px}
+.feats{display:flex;flex-wrap:wrap;gap:18px 28px;font-size:.78rem;color:var(--muted)}
+.feats div{display:flex;align-items:center;gap:10px;line-height:1.3}
+.feats .ico{width:36px;height:36px;border-radius:10px;background:#fff;border:1px solid var(--line)}
+.feats .ico svg{width:18px;height:18px}
+.hero-visual{position:relative;height:100%;display:flex;align-items:flex-end;justify-content:center}
+.hero-visual .doc{width:min(440px,100%);border-radius:24px 24px 0 0;-webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent);mask-image:linear-gradient(to bottom,#000 80%,transparent)}
+.sign{position:absolute;left:-10px;top:90px;font-family:"Playfair Display",serif;font-style:italic;font-size:2.1rem;color:#333}
+.sign small{display:block;font-family:Inter;font-style:normal;font-size:.62rem;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;margin-top:4px}
+.quote{position:absolute;right:0;top:60px;max-width:210px;font-size:.85rem;color:var(--muted)}
+.quote::before{content:"\201C";display:block;font-family:"Playfair Display";font-size:2.6rem;line-height:.6;color:var(--gold)}
+.quote::after{content:"";display:block;width:36px;height:2px;background:var(--gold);margin-top:10px}
+.values{position:absolute;right:-10px;bottom:30px;background:rgba(255,255,255,.75);backdrop-filter:blur(10px);border:1px solid #fff;border-radius:18px;padding:18px 22px;box-shadow:var(--shadow);font-size:.86rem;display:grid;gap:10px}
+.values span{display:flex;gap:10px;align-items:center}
+.values svg{width:16px;height:16px;color:var(--gold)}
+
+/* sections */
+section{padding:90px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:40px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(1.8rem,3.2vw,2.5rem);font-weight:600;margin-top:8px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.sec-head h2::after{content:"";width:40px;height:2px;background:var(--gold)}
+.sec-head p{max-width:380px;color:var(--muted);font-size:.92rem}
+.arrows{display:flex;gap:10px}
+.arrows button{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:#fff;cursor:pointer;display:grid;place-items:center;transition:.2s}
+.arrows button:hover{background:var(--gold);color:#fff;border-color:var(--gold)}
+.arrows svg{width:16px;height:16px}
+
+.slider{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 4*18px)/5);gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:6px 2px 20px}
+.slider::-webkit-scrollbar{display:none}
+.tcard{scroll-snap-align:start;background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1px solid #fff;display:flex;flex-direction:column;transition:transform .25s}
+.tcard:hover{transform:translateY(-6px)}
+.tcard img{aspect-ratio:16/9;object-fit:cover;width:100%}
+.tcard .body{padding:30px 20px 22px;position:relative;flex:1;display:flex;flex-direction:column}
+.tcard .ico{position:absolute;top:-22px;left:16px;background:#fff;box-shadow:var(--shadow)}
+.tcard h3{font-size:1.08rem;margin-bottom:6px}
+.tcard p{font-size:.86rem;color:var(--muted);flex:1}
+.tcard a{margin-top:16px;font-weight:600;font-size:.84rem;display:inline-flex;gap:8px;align-items:center}
+.tcard a:hover{color:var(--gold)}
+
+.about{background:linear-gradient(180deg,#fff,var(--cream))}
+.about-grid{display:grid;grid-template-columns:1fr 1.05fr .85fr;gap:44px;align-items:center}
+.about-img{border-radius:22px;overflow:hidden;box-shadow:var(--shadow)}
+.about h2{font-size:clamp(2rem,3.6vw,2.8rem);font-weight:600;margin:8px 0 6px}
+.about .cro{font-size:.72rem;letter-spacing:.24em;color:var(--muted);margin-bottom:18px}
+.about p{color:var(--muted);margin-bottom:26px}
+.about ul{list-style:none;display:grid;gap:22px}
+.about li{display:flex;gap:14px;align-items:center;font-size:.92rem}
+
+.results-grid{display:grid;grid-template-columns:260px 1fr;gap:30px;align-items:center}
+.results h2{font-size:clamp(1.7rem,2.8vw,2.2rem);font-weight:600;line-height:1.15;margin-top:8px}
+.ba{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.ba img{border-radius:12px;box-shadow:var(--shadow);width:100%}
+
+.testis{background:var(--cream)}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.testi{background:#fff;border-radius:var(--radius);padding:24px;display:flex;gap:18px;box-shadow:var(--shadow)}
+.testi img{width:74px;height:74px;border-radius:50%;object-fit:cover;flex:none}
+.stars{color:#e0a530;letter-spacing:2px;font-size:.9rem}
+.testi q{display:block;font-size:.88rem;color:#444;margin:6px 0 12px}
+.testi b{font-size:.88rem}.testi small{display:block;color:var(--muted);font-size:.76rem}
+
+.loc-grid{display:grid;grid-template-columns:1fr 1.05fr 1.15fr;gap:26px;align-items:stretch}
+.loc h2{font-size:clamp(1.7rem,2.8vw,2.1rem);font-weight:600;margin:8px 0 18px}
+.loc .info{display:grid;gap:18px;font-size:.92rem}
+.loc .info div{display:flex;gap:12px;align-items:flex-start}
+.loc .info svg{width:22px;height:22px;color:var(--gold);flex:none;margin-top:2px}
+.map{border-radius:20px;overflow:hidden;box-shadow:var(--shadow);min-height:240px;border:4px solid #fff}
+.map iframe{width:100%;height:100%;min-height:240px;border:0;display:block}
+.wa-card{background:#1d1d1f;color:#fff;border-radius:20px;padding:30px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+.wa-card .top{display:flex;gap:16px;align-items:center;margin-bottom:22px;max-width:70%}
+.wa-card .wa{width:56px;height:56px;border-radius:50%;background:#25d366;display:grid;place-items:center;flex:none}
+.wa-card .wa svg{width:30px;height:30px;color:#fff}
+.wa-card h3{font-size:1.1rem}.wa-card p{font-size:.82rem;color:#bbb}
+.wa-card .phone{position:absolute;right:-6px;bottom:-10px;width:120px;opacity:.95}
+.wa-card .btn{align-self:flex-start;position:relative;z-index:1}
+
+footer{border-top:1px solid var(--line);padding:30px 0;background:#fff}
+.foot{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.foot .menu{gap:22px;font-size:.82rem}
+.social{display:flex;gap:14px;align-items:center}
+.social a{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line);transition:.2s}
+.social a:hover{background:var(--gold);color:#fff;border-color:var(--gold)}
+.social svg{width:16px;height:16px}
+.foot .tag{font-size:.82rem;color:var(--muted);max-width:220px;border-left:1px solid var(--line);padding-left:18px}
+.copy{text-align:center;font-size:.75rem;color:var(--muted);margin-top:22px}
+
+.float-wa{position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 25px rgba(37,211,102,.45);z-index:60;transition:transform .2s}
+.float-wa:hover{transform:scale(1.08)}
+.float-wa svg{width:30px;height:30px;color:#fff}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:1060px){
+  .slider{grid-auto-columns:calc((100% - 2*18px)/3)}
+  .about-grid{grid-template-columns:1fr 1fr}
+  .about ul{grid-column:1/-1;grid-template-columns:1fr 1fr}
+  .loc-grid{grid-template-columns:1fr 1fr}
+  .wa-card{grid-column:1/-1}
+  .values,.quote{display:none}
+}
+@media (max-width:860px){
+  .menu-wrap{position:fixed;inset:78px 0 auto 0;background:var(--bg);padding:20px;border-bottom:1px solid var(--line);transform:translateY(-130%);transition:transform .3s;z-index:-1}
+  .menu-wrap.open{transform:none}
+  .menu-wrap .menu{flex-direction:column;gap:14px;font-size:1rem}
+  .burger{display:block}
+  .nav .btn-gold{display:none}
+  .hero-grid{grid-template-columns:1fr;min-height:0}
+  .hero-text{padding:40px 0 10px}
+  .sign{top:30px;left:0;font-size:1.6rem}
+  .results-grid{grid-template-columns:1fr}
+  .ba{grid-template-columns:1fr 1fr}
+  .tgrid{grid-template-columns:1fr}
+  section{padding:64px 0}
+}
+@media (max-width:600px){
+  .slider{grid-auto-columns:78%}
+  .about-grid,.loc-grid{grid-template-columns:1fr}
+  .about ul{grid-template-columns:1fr}
+  .foot{flex-direction:column;text-align:center}
+  .foot .menu{flex-wrap:wrap;justify-content:center}
+  .foot .tag{border:0;padding:0}
+  .wa-card .top{max-width:100%}.wa-card .phone{display:none}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.6.1a8.2 8.2 0 0 1-4.1-3.6c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.4 3.4 0 0 0-1 2.5 5.9 5.9 0 0 0 1.2 3.1 13.5 13.5 0 0 0 5.2 4.6c1.9.8 2.7.9 3.6.7a3.1 3.1 0 0 0 2-1.4 2.5 2.5 0 0 0 .2-1.4c-.1-.2-.3-.3-.6-.4ZM12 21.8a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8ZM20.5 3.5A11.8 11.8 0 0 0 1.9 17.7L.2 24l6.4-1.7A11.8 11.8 0 0 0 24 12a11.7 11.7 0 0 0-3.5-8.5Z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+  <symbol id="i-tooth" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M7.5 3C5 3 3.5 5 3.5 7.5c0 3 1.5 4.5 2 7S6.8 21 8.3 21c1.6 0 1.4-5.5 3.7-5.5s2.1 5.5 3.7 5.5c1.5 0 2.3-4 2.8-6.5s2-4 2-7C20.5 5 19 3 16.5 3 14.6 3 13.8 4 12 4S9.4 3 7.5 3Z"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10C19.5 15.4 12 20 12 20Z"/></symbol>
+  <symbol id="i-chip" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M7 7h10v10H7zM10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/></symbol>
+  <symbol id="i-sofa" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M4 11V8a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v3M2 12a2 2 0 0 1 4 0v2h12v-2a2 2 0 0 1 4 0v5H2zM5 17v2M19 17v2"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7Z"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M12 3c.6 4.6 2.4 6.4 7 7-4.6.6-6.4 2.4-7 7-.6-4.6-2.4-6.4-7-7 4.6-.6 6.4-2.4 7-7Z"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1 7 17M17 7l2.1-2.1"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6Z"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="m8.5 12 2.5 2.5 4.5-5"/></symbol>
+  <symbol id="i-smile" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M8 14a5 5 0 0 0 8 0M9 9.5h.01M15 9.5h.01"/></symbol>
+  <symbol id="i-grad" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M2 9l10-5 10 5-10 5Z"/><path fill="none" stroke="currentColor" stroke-width="1.6" d="M6 11v5c3 2.5 9 2.5 12 0v-5"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14a6.5 6.5 0 0 1 3.5 6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1Z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8.5a.5.5 0 0 1 .5-.5Z"/></symbol>
+</svg>
+
+<header id="top">
+  <div class="wrap nav">
+    <a href="#inicio" class="logo" aria-label="Clínica Reabilite – início"><img src="logo.jpg" alt="Reabilite – Consultório Odontológico Dr. Jailton"></a>
+    <div class="menu-wrap" id="menuWrap">
+      <nav class="menu">
+        <a href="#inicio" class="active">Início</a>
+        <a href="#tratamentos">Tratamentos</a>
+        <a href="#sobre">Sobre o Doutor</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#localizacao">Localização</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+    <a class="btn btn-gold wa-link" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Agendar pelo WhatsApp</a>
+    <button class="burger" id="burger" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio" style="padding:0">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <div class="eyebrow">Clínica Reabilite Oficial</div>
+      <h1 class="serif">Transformando <em>sorrisos</em> todos os dias.</h1>
+      <p class="lead">Odontologia de qualidade com tecnologia, segurança e um atendimento humanizado para você e sua família em Piancó – PB.</p>
+      <div class="hero-cta">
+        <a class="btn btn-gold wa-link" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Agendar pelo WhatsApp<svg class="arrow"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-ghost" href="#tratamentos">Ver tratamentos<svg class="arrow"><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="feats">
+        <div><span class="ico"><svg><use href="#i-users"/></svg></span>Atendimento<br>Humanizado</div>
+        <div><span class="ico"><svg><use href="#i-chip"/></svg></span>Tecnologia<br>Avançada</div>
+        <div><span class="ico"><svg><use href="#i-sofa"/></svg></span>Ambiente Moderno<br>e Confortável</div>
+        <div><span class="ico"><svg><use href="#i-star"/></svg></span>Resultados<br>que Transformam</div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="sign">Dr. Jailton<small>Cirurgião-dentista · CRO 5554</small></div>
+      <img class="doc" src="doutor-hero.jpg" alt="Dr. Jailton, cirurgião-dentista da Clínica Reabilite">
+      <div class="quote">Mais que tratamentos, realizamos sonhos através de sorrisos saudáveis.</div>
+      <div class="values">
+        <span><svg><use href="#i-tooth"/></svg>Saúde</span>
+        <span><svg><use href="#i-sparkle"/></svg>Estética</span>
+        <span><svg><use href="#i-gear"/></svg>Função</span>
+        <span><svg><use href="#i-shield"/></svg>Confiança</span>
+        <span><svg><use href="#i-smile"/></svg>Qualidade de Vida</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tratamentos">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><div class="eyebrow">Nossos tratamentos</div><h2 class="serif">Soluções completas para o seu sorriso</h2></div>
+      <div style="display:flex;gap:24px;align-items:center">
+        <p>Da prevenção à estética, oferecemos tratamentos personalizados com tecnologia e excelência.</p>
+        <div class="arrows"><button data-dir="-1" aria-label="Anterior"><svg><use href="#i-left"/></svg></button><button data-dir="1" aria-label="Próximo"><svg><use href="#i-arrow"/></svg></button></div>
+      </div>
+    </div>
+    <div class="slider reveal" id="slider">
+      <article class="tcard"><img src="t1.jpg" alt="Clínica geral" loading="lazy"><div class="body"><span class="ico"><svg><use href="#i-tooth"/></svg></span><h3>Clínica Geral</h3><p>Prevenção, limpezas, restaurações e cuidados com a sua saúde bucal.</p><a class="wa-link" href="#" data-msg="Olá! Quero saber mais sobre Clínica Geral." target="_blank" rel="noopener">Saiba mais <svg width="16" height="16"><use href="#i-arrow"/></svg></a></div></article>
+      <article class="tcard"><img src="t2.jpg" alt="Tratamento de canal" loading="lazy"><div class="body"><span class="ico"><svg><use href="#i-tooth"/></svg></span><h3>Canal</h3><p>Tratamento de canal com tecnologia e alto índice de sucesso, sem dor.</p><a class="wa-link" href="#" data-msg="Olá! Quero saber mais sobre Tratamento de Canal." target="_blank" rel="noopener">Saiba mais <svg width="16" height="16"><use href="#i-arrow"/></svg></a></div></article>
+      <article class="tcard"><img src="t3.jpg" alt="Facetas e lentes de contato" loading="lazy"><div class="body"><span class="ico"><svg><use href="#i-sparkle"/></svg></span><h3>Facetas &amp; Lentes de Contato</h3><p>Mais estética, harmonia e autoestima para o seu sorriso.</p><a class="wa-link" href="#" data-msg="Olá! Quero saber mais sobre Facetas e Lentes de Contato." target="_blank" rel="noopener">Saiba mais <svg width="16" height="16"><use href="#i-arrow"/></svg></a></div></article>
+      <article class="tcard"><img src="t4.jpg" alt="Ortodontia" loading="lazy"><div class="body"><span class="ico"><svg><use href="#i-smile"/></svg></span><h3>Ortodontia</h3><p>Aparelhos fixos e alinhadores para um sorriso mais bonito e saudável.</p><a class="wa-link" href="#" data-msg="Olá! Quero saber mais sobre Ortodontia." target="_blank" rel="noopener">Saiba mais <svg width="16" height="16"><use href="#i-arrow"/></svg></a></div></article>
+      <article class="tcard"><img src="t5.jpg" alt="Cirurgias" loading="lazy"><div class="body"><span class="ico"><svg><use href="#i-shield"/></svg></span><h3>Cirurgias</h3><p>Extrações, sisos e procedimentos cirúrgicos com total segurança.</p><a class="wa-link" href="#" data-msg="Olá! Quero saber mais sobre Cirurgias." target="_blank" rel="noopener">Saiba mais <svg width="16" height="16"><use href="#i-arrow"/></svg></a></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="sobre">
+  <div class="wrap about-grid">
+    <div class="about-img reveal"><img src="doutor-sobre.jpg" alt="Dr. Jailton em seu consultório" loading="lazy"></div>
+    <div class="reveal">
+      <div class="eyebrow">Sobre o doutor</div>
+      <h2 class="serif">Dr. Jailton</h2>
+      <div class="cro">CIRURGIÃO-DENTISTA &nbsp;|&nbsp; CRO 5554</div>
+      <p>Com mais de 10 anos de experiência, o Dr. Jailton atua com dedicação para oferecer um atendimento ético, humanizado e de excelência, unindo conhecimento, tecnologia e atenção aos detalhes para transformar sorrisos e melhorar a qualidade de vida dos seus pacientes.</p>
+      <a class="btn btn-gold wa-link" href="#" data-msg="Olá, Dr. Jailton! Gostaria de agendar uma avaliação." target="_blank" rel="noopener">Fale com o Dr. Jailton<svg class="arrow"><use href="#i-arrow"/></svg></a>
+    </div>
+    <ul class="reveal">
+      <li><span class="ico"><svg><use href="#i-grad"/></svg></span>Formação sólida e atualização constante</li>
+      <li><span class="ico"><svg><use href="#i-users"/></svg></span>Atendimento humanizado e individualizado</li>
+      <li><span class="ico"><svg><use href="#i-chip"/></svg></span>Tecnologia e técnicas modernas</li>
+      <li><span class="ico"><svg><use href="#i-heart"/></svg></span>Foco em resultados naturais e duradouros</li>
+    </ul>
+  </div>
+</section>
+
+<section class="results">
+  <div class="wrap results-grid">
+    <div class="reveal"><div class="eyebrow">Resultados reais</div><h2 class="serif">Sorrisos que transformam vidas</h2></div>
+    <div class="ba reveal">
+      <img src="ba1.jpg" alt="Antes e depois – restauração" loading="lazy">
+      <img src="ba2.jpg" alt="Antes e depois – ortodontia" loading="lazy">
+      <img src="ba3.jpg" alt="Antes e depois – facetas" loading="lazy">
+      <img src="ba4.jpg" alt="Antes e depois – clareamento" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="testis" id="depoimentos">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><div class="eyebrow">Depoimentos</div><h2 class="serif">A confiança dos nossos pacientes</h2></div></div>
+    <div class="tgrid">
+      <div class="testi reveal"><img src="av1.jpg" alt="Mariana Silva" loading="lazy"><div><div class="stars">★★★★★</div><q>Atendimento excelente, equipe muito atenciosa. Meu sorriso ficou incrível! Super recomendo.</q><b>Mariana Silva</b><small>Paciente da Clínica Reabilite</small></div></div>
+      <div class="testi reveal"><img src="av2.jpg" alt="Carlos Medeiros" loading="lazy"><div><div class="stars">★★★★★</div><q>Dr. Jailton é um profissional incrível, atencioso e muito competente. Me senti seguro em todo o tratamento.</q><b>Carlos Medeiros</b><small>Paciente da Clínica Reabilite</small></div></div>
+      <div class="testi reveal"><img src="av3.jpg" alt="Fernanda Lima" loading="lazy"><div><div class="stars">★★★★★</div><q>Clínica moderna, ambiente agradável e um atendimento humanizado. Resultado acima das minhas expectativas!</q><b>Fernanda Lima</b><small>Paciente da Clínica Reabilite</small></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="loc" id="localizacao">
+  <div class="wrap loc-grid">
+    <div class="reveal">
+      <div class="eyebrow">Nossa localização</div>
+      <h2 class="serif">Venha nos fazer uma visita</h2>
+      <div class="info">
+        <div><svg><use href="#i-pin"/></svg><span>Rua Ademar Leite, 26 – Centro, Piancó – PB</span></div>
+        <div><svg><use href="#i-clock"/></svg><span>Segunda a Sexta<br><small style="color:var(--muted)">08h às 12h | 14h às 18h</small></span></div>
+        <div id="contato"><svg><use href="#i-phone"/></svg><span><b class="phone-text">(83) 9 9988-XXXX</b><br><small style="color:var(--muted)">Fale pelo WhatsApp</small></span></div>
+      </div>
+    </div>
+    <div class="map reveal">
+      <iframe title="Mapa – Clínica Reabilite" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Rua+Ademar+Leite,+26,+Centro,+Pianc%C3%B3+-+PB&output=embed"></iframe>
+    </div>
+    <div class="wa-card reveal">
+      <div class="top"><span class="wa"><svg><use href="#i-wa"/></svg></span><div><h3>Agende sua consulta pelo WhatsApp</h3><p>Atendimento rápido e personalizado para você.</p></div></div>
+      <a class="btn btn-gold wa-link" href="#" target="_blank" rel="noopener">Falar agora no WhatsApp<svg class="arrow"><use href="#i-arrow"/></svg></a>
+      <img class="phone" src="celular.jpg" alt="" aria-hidden="true">
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a href="#inicio" class="logo"><img src="logo.jpg" alt="Reabilite – Dr. Jailton"></a>
+    <nav class="menu">
+      <a href="#inicio">Início</a><a href="#tratamentos">Tratamentos</a><a href="#sobre">Sobre o Doutor</a><a href="#depoimentos">Depoimentos</a><a href="#localizacao">Localização</a><a href="#contato">Contato</a>
+    </nav>
+    <div style="display:flex;gap:18px;align-items:center">
+      <div class="social">
+        <a href="#" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a>
+      </div>
+      <div class="tag">Cuidando do seu sorriso hoje para um futuro ainda mais bonito.</div>
+    </div>
+  </div>
+  <div class="copy">© <span id="ano"></span> Clínica Reabilite – Dr. Jailton · CRO 5554 · Piancó – PB</div>
+</footer>
+
+<a class="float-wa wa-link" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg><use href="#i-wa"/></svg></a>
+
+<script>
+// === CONFIGURE AQUI o número do WhatsApp (DDI + DDD + número, só dígitos) ===
+const WHATSAPP = "5583999880000";
+const MSG_PADRAO = "Olá! Vim pelo site e gostaria de agendar uma consulta na Clínica Reabilite.";
+
+document.querySelectorAll('.wa-link').forEach(a=>{
+  const msg = a.dataset.msg || MSG_PADRAO;
+  a.href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
+});
+document.getElementById('ano').textContent = new Date().getFullYear();
+
+const header=document.querySelector('header');
+addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>10),{passive:true});
+
+const burger=document.getElementById('burger'),mw=document.getElementById('menuWrap');
+burger.onclick=()=>mw.classList.toggle('open');
+mw.querySelectorAll('a').forEach(a=>a.onclick=()=>mw.classList.remove('open'));
+
+const slider=document.getElementById('slider');
+document.querySelectorAll('.arrows button').forEach(b=>b.onclick=()=>{
+  const card=slider.querySelector('.tcard');
+  slider.scrollBy({left:(card.offsetWidth+18)*+b.dataset.dir,behavior:'smooth'});
+});
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+const links=[...document.querySelectorAll('header .menu a')];
+const secs=links.map(l=>document.querySelector(l.getAttribute('href'))).filter(Boolean);
+addEventListener('scroll',()=>{
+  let cur=secs[0];secs.forEach(s=>{if(s.getBoundingClientRect().top<120)cur=s});
+  links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+cur.id));
+},{passive:true});
+</script>
+</body>
+</html>
