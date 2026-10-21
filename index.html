@@ -171,6 +171,11 @@ footer{border-top:1px solid var(--line);padding:30px 0;background:#fff}
   .quote{max-width:190px;font-size:.8rem}
 }
 @media (max-width:860px){
+  header,.vid-wrap .values,.about-img .badge{backdrop-filter:none;-webkit-backdrop-filter:none}
+  header{background:rgba(251,248,243,.97)}
+  .vid-wrap .values{background:rgba(255,255,255,.94)}
+  .about-img .badge{background:rgba(255,250,240,.96)}
+  video{transform:translateZ(0)}
   .menu-wrap{position:fixed;inset:78px 0 auto 0;background:var(--bg);padding:20px;border-bottom:1px solid var(--line);transform:translateY(-130%);transition:transform .3s;z-index:-1}
   .menu-wrap.open{transform:none}
   .menu-wrap .menu{flex-direction:column;gap:14px;font-size:1rem}
@@ -265,7 +270,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;background:#fff}
     </div>
     <div class="hero-visual">
       <div class="sign">Dr. Jailton<small>Cirurgião-dentista · CRO 5554</small></div>
-      <div class="vid-wrap"><video class="doc" autoplay muted loop playsinline preload="auto" poster="doutor-hero.jpg" aria-label="Dr. Jailton, cirurgião-dentista da Clínica Reabilite"><source src="doutor-hero.webm" type="video/webm"><source src="doutor-hero.mp4" type="video/mp4"></video>
+      <div class="vid-wrap"><video class="doc" autoplay muted loop playsinline preload="auto" poster="doutor-hero.jpg" aria-label="Dr. Jailton, cirurgião-dentista da Clínica Reabilite"><source src="doutor-hero.mp4" type="video/mp4"></video>
       <div class="values">
         <span><svg><use href="#i-tooth"/></svg>Saúde</span>
         <span><svg><use href="#i-sparkle"/></svg>Estética</span>
@@ -300,7 +305,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;background:#fff}
 
 <section class="about" id="sobre">
   <div class="wrap about-grid">
-    <div class="about-img reveal"><video autoplay muted loop playsinline preload="metadata" poster="doutor-sobre.jpg" aria-label="Dr. Jailton em seu consultório"><source src="doutor-sobre.webm" type="video/webm"><source src="doutor-sobre.mp4" type="video/mp4"></video><div class="badge"><small>Mais de</small><b class="serif">10 anos</b><span>transformando sorrisos em Piancó e região.</span></div></div>
+    <div class="about-img reveal"><video autoplay muted loop playsinline preload="auto" poster="doutor-sobre.jpg" aria-label="Dr. Jailton em seu consultório"><source src="doutor-sobre.mp4" type="video/mp4"></video><div class="badge"><small>Mais de</small><b class="serif">10 anos</b><span>transformando sorrisos em Piancó e região.</span></div></div>
     <div class="reveal">
       <div class="eyebrow">Sobre o doutor</div>
       <h2 class="serif">Dr. Jailton</h2>
@@ -419,11 +424,11 @@ addEventListener('scroll',()=>{
 // Autoplay robusto (iOS modo pouca energia, etc.)
 const vids=[...document.querySelectorAll('video')];
 vids.forEach(v=>{v.muted=true;v.defaultMuted=true;v.playsInline=true;v.setAttribute('webkit-playsinline','');});
-const tryPlay=v=>{const p=v.play();if(p&&p.catch)p.catch(()=>{});};
-const vio=new IntersectionObserver(es=>es.forEach(e=>{e.isIntersecting?tryPlay(e.target):e.target.pause()}),{threshold:.15});
-vids.forEach(v=>{vio.observe(v);v.addEventListener('loadeddata',()=>tryPlay(v));});
-const kick=()=>vids.forEach(v=>{if(v.paused&&v.getBoundingClientRect().top<innerHeight&&v.getBoundingClientRect().bottom>0)tryPlay(v)});
-['touchstart','touchend','click','scroll','keydown'].forEach(ev=>addEventListener(ev,kick,{passive:true}));
+const tryPlay=v=>{if(!v.paused)return;const p=v.play();if(p&&p.catch)p.catch(()=>{});};
+const vio=new IntersectionObserver(es=>es.forEach(e=>{e.isIntersecting?tryPlay(e.target):e.target.pause()}),{threshold:.1});
+vids.forEach(v=>vio.observe(v));
+const kick=()=>{vids.forEach(v=>{const r=v.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)tryPlay(v)});};
+['touchstart','click'].forEach(ev=>addEventListener(ev,kick,{passive:true,once:true}));
 </script>
 </body>
 </html>
