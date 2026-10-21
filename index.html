@@ -65,7 +65,7 @@ header.scrolled{border-color:var(--line)}
 .feats .ico svg{width:18px;height:18px}
 .hero-visual{position:relative;height:100%;display:flex;align-items:flex-end;justify-content:center}
 .hero-visual .doc{width:min(440px,100%);border-radius:24px 24px 0 0;-webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent);mask-image:linear-gradient(to bottom,#000 80%,transparent)}
-.sign{position:absolute;left:-10px;top:90px;font-family:"Playfair Display",serif;font-style:italic;font-size:2.1rem;color:#333}
+.sign{position:absolute;left:-10px;top:24px;z-index:2;font-family:"Playfair Display",serif;font-style:italic;font-size:2.1rem;color:#333}
 .sign small{display:block;font-family:Inter;font-style:normal;font-size:.62rem;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;margin-top:4px}
 .quote{position:absolute;right:0;top:60px;max-width:210px;font-size:.85rem;color:var(--muted)}
 .quote::before{content:"\201C";display:block;font-family:"Playfair Display";font-size:2.6rem;line-height:.6;color:var(--gold)}
@@ -99,7 +99,13 @@ section{padding:90px 0}
 
 .about{background:linear-gradient(180deg,#fff,var(--cream))}
 .about-grid{display:grid;grid-template-columns:1fr 1.05fr .85fr;gap:44px;align-items:center}
-.about-img{border-radius:22px;overflow:hidden;box-shadow:var(--shadow)}
+.about-img{border-radius:22px;overflow:hidden;box-shadow:var(--shadow);position:relative;aspect-ratio:3/2;background:#e9e6e1}
+.about-img video{width:100%;height:100%;object-fit:cover;display:block}
+.about-img .badge{position:absolute;right:14px;bottom:14px;background:rgba(255,250,240,.9);backdrop-filter:blur(8px);border-radius:14px;padding:12px 16px;box-shadow:var(--shadow);max-width:170px;line-height:1.15;padding:10px 14px}
+.about-img .badge small{font-size:.7rem;color:var(--muted)}
+.about-img .badge b{display:block;font-size:1.9rem;color:var(--gold-dark)}
+.about-img .badge span{font-size:.7rem;color:var(--muted)}
+.hero-visual video.doc{aspect-ratio:4/5;object-fit:cover;background:#ece8e2}
 .about h2{font-size:clamp(2rem,3.6vw,2.8rem);font-weight:600;margin:8px 0 6px}
 .about .cro{font-size:.72rem;letter-spacing:.24em;color:var(--muted);margin-bottom:18px}
 .about p{color:var(--muted);margin-bottom:26px}
@@ -246,7 +252,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;background:#fff}
     </div>
     <div class="hero-visual">
       <div class="sign">Dr. Jailton<small>Cirurgião-dentista · CRO 5554</small></div>
-      <img class="doc" src="doutor-hero.jpg" alt="Dr. Jailton, cirurgião-dentista da Clínica Reabilite">
+      <video class="doc" autoplay muted loop playsinline preload="auto" poster="doutor-hero.jpg" aria-label="Dr. Jailton, cirurgião-dentista da Clínica Reabilite"><source src="doutor-hero.webm" type="video/webm"><source src="doutor-hero.mp4" type="video/mp4"></video>
       <div class="quote">Mais que tratamentos, realizamos sonhos através de sorrisos saudáveis.</div>
       <div class="values">
         <span><svg><use href="#i-tooth"/></svg>Saúde</span>
@@ -280,7 +286,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;background:#fff}
 
 <section class="about" id="sobre">
   <div class="wrap about-grid">
-    <div class="about-img reveal"><img src="doutor-sobre.jpg" alt="Dr. Jailton em seu consultório" loading="lazy"></div>
+    <div class="about-img reveal"><video autoplay muted loop playsinline preload="metadata" poster="doutor-sobre.jpg" aria-label="Dr. Jailton em seu consultório"><source src="doutor-sobre.webm" type="video/webm"><source src="doutor-sobre.mp4" type="video/mp4"></video><div class="badge"><small>Mais de</small><b class="serif">10 anos</b><span>transformando sorrisos em Piancó e região.</span></div></div>
     <div class="reveal">
       <div class="eyebrow">Sobre o doutor</div>
       <h2 class="serif">Dr. Jailton</h2>
