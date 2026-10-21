@@ -64,7 +64,9 @@ header.scrolled{border-color:var(--line)}
 .feats .ico{width:36px;height:36px;border-radius:10px;background:#fff;border:1px solid var(--line)}
 .feats .ico svg{width:18px;height:18px}
 .hero-visual{position:relative;height:100%;display:flex;align-items:flex-end;justify-content:center;padding-top:150px}
-.hero-visual .doc{width:min(420px,100%);border-radius:24px 24px 0 0;-webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent);mask-image:linear-gradient(to bottom,#000 80%,transparent)}
+.vid-wrap{position:relative;width:min(420px,100%);display:flex}
+.vid-wrap .values{right:-90px}
+.hero-visual .doc{width:100%;border-radius:24px 24px 0 0;-webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent);mask-image:linear-gradient(to bottom,#000 80%,transparent)}
 .sign{position:absolute;left:0;top:40px;z-index:2;font-family:"Playfair Display",serif;font-style:italic;font-size:2.1rem;color:#333}
 .sign small{display:block;font-family:Inter;font-style:normal;font-size:.62rem;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;margin-top:4px}
 .quote{position:absolute;right:0;top:40px;z-index:2;max-width:230px;font-size:.85rem;color:var(--muted)}
@@ -163,7 +165,10 @@ footer{border-top:1px solid var(--line);padding:30px 0;background:#fff}
   .about ul{grid-column:1/-1;grid-template-columns:1fr 1fr}
   .loc-grid{grid-template-columns:1fr 1fr}
   .wa-card{grid-column:1/-1}
-  .values,.quote{display:none}
+  .menu{gap:16px;font-size:.8rem}.menu a{white-space:nowrap}
+  .nav .btn-gold{padding:10px 16px;font-size:.8rem;white-space:nowrap}
+  .vid-wrap .values{right:10px;bottom:16px;padding:14px 18px;font-size:.8rem;gap:8px}
+  .quote{max-width:190px;font-size:.8rem}
 }
 @media (max-width:860px){
   .menu-wrap{position:fixed;inset:78px 0 auto 0;background:var(--bg);padding:20px;border-bottom:1px solid var(--line);transform:translateY(-130%);transition:transform .3s;z-index:-1}
@@ -175,6 +180,11 @@ footer{border-top:1px solid var(--line);padding:30px 0;background:#fff}
   .hero-visual{padding-top:0;flex-direction:column;align-items:center;padding-bottom:10px}
   .sign{position:static;align-self:flex-start;margin:10px 0 14px;font-size:1.7rem}
   .hero-visual .doc{width:100%;max-width:420px;border-radius:22px;-webkit-mask-image:none;mask-image:none;box-shadow:var(--shadow);aspect-ratio:4/5}
+  .vid-wrap{position:relative;width:100%;max-width:420px}
+  .vid-wrap .values{right:10px;bottom:10px;padding:10px 12px;font-size:.72rem;gap:5px;border-radius:14px;background:rgba(255,255,255,.82)}
+  .values svg{width:13px;height:13px}
+  .quote{position:static;order:3;max-width:none;align-self:stretch;margin:22px 0 0;font-size:.95rem;text-align:center}
+  .quote::after{margin:10px auto 0}
   .hero-text{padding:40px 0 10px}
   .sign{top:30px;left:0;font-size:1.6rem}
   .results-grid{grid-template-columns:1fr}
@@ -255,8 +265,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;background:#fff}
     </div>
     <div class="hero-visual">
       <div class="sign">Dr. Jailton<small>Cirurgião-dentista · CRO 5554</small></div>
-      <video class="doc" autoplay muted loop playsinline preload="auto" poster="doutor-hero.jpg" aria-label="Dr. Jailton, cirurgião-dentista da Clínica Reabilite"><source src="doutor-hero.webm" type="video/webm"><source src="doutor-hero.mp4" type="video/mp4"></video>
-      <div class="quote">Mais que tratamentos, realizamos sonhos através de sorrisos saudáveis.</div>
+      <div class="vid-wrap"><video class="doc" autoplay muted loop playsinline preload="auto" poster="doutor-hero.jpg" aria-label="Dr. Jailton, cirurgião-dentista da Clínica Reabilite"><source src="doutor-hero.webm" type="video/webm"><source src="doutor-hero.mp4" type="video/mp4"></video>
       <div class="values">
         <span><svg><use href="#i-tooth"/></svg>Saúde</span>
         <span><svg><use href="#i-sparkle"/></svg>Estética</span>
@@ -264,6 +273,8 @@ footer{border-top:1px solid var(--line);padding:30px 0;background:#fff}
         <span><svg><use href="#i-shield"/></svg>Confiança</span>
         <span><svg><use href="#i-smile"/></svg>Qualidade de Vida</span>
       </div>
+      </div>
+      <div class="quote">Mais que tratamentos, realizamos sonhos através de sorrisos saudáveis.</div>
     </div>
   </div>
 </section>
